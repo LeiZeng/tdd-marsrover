@@ -1,0 +1,92 @@
+{
+  "name": "tdd-marsrover",
+  "version": "0.1.0",
+  "license": "Apache License 2.0",
+  "private": true,
+  "homepage": "https://jimmylv.github.io/tdd-marsrover",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test ./src/dojo/marsrover.test.js",
+    "test:ci": "cross-env CI=true yarn test --coverage",
+    "lint:fix": "eslint src --fix",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.2",
+    "lodash": "^4.17.15",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "reselect": "^4.0.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "gh-pages": "^2.1.1",
+    "husky": "^4.2.1",
+    "istanbul-lib-coverage": "^2.0.5",
+    "lint-staged": "^10.0.4",
+    "nyc": "^14.1.1",
+    "prettier": "1.18.2",
+    "redux-mock-store": "^1.5.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
