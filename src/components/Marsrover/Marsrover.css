@@ -1,0 +1,22 @@
+.Control {
+  color: white;
+}
+
+.Control .item {
+  width: 100px;
+  margin: 5px;
+}
+
+.Control .item.long {
+  width: 200px;
+}
+
+.Control .ControlInput {
+  margin: 5px;
+  width: 50%;
+  height: 80px;
+}
+
+.Control .ControlButton {
+  margin: 5px;
+}

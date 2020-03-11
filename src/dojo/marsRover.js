@@ -7,9 +7,11 @@ const command = {
   commandList: '',
 }
 class MarsRover {
+  X = 5;
+  Y = 5;
   x = 0;
   y = 0;
-  direction = 'S';
+  direction = 'N';
   command = null;
 
   execute(commandText) {
