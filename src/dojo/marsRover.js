@@ -11,7 +11,7 @@ class MarsRover {
   Y = 5;
   x = 0;
   y = 0;
-  direction = 'N';
+  direction = 'S';
   command = null;
 
   execute(commandText) {
