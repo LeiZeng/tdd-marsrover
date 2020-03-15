@@ -7,7 +7,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test ./src",
+    "test": "react-scripts test ./src/dojo",
     "test:ci": "cross-env CI=true yarn test --coverage",
     "lint:fix": "eslint src --fix",
     "predeploy": "yarn build",
