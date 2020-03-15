@@ -26,7 +26,7 @@ it('should have map tile', async () => {
   const wrapper = render(<MarsGround />)
 
   // when
-  const mapItem = await screen.findAllByRole('map-item')
+  const mapItem = await screen.findAllByTestId('map-item')
 
   // then
   expect(mapItem.length).toBe(25)
@@ -37,7 +37,7 @@ it('should have init info of marsrover', async () => {
   const wrapper = render(<MarsGround />)
 
   // when
-  const result = await screen.findByRole('marsrover-info')
+  const result = await screen.findByTestId('marsrover-info')
 
   // then
   expect(result.textContent).toBe('0 0 N')

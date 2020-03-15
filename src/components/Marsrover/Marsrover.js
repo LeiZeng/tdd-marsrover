@@ -24,9 +24,9 @@ export default class Marsrover extends Component {
     return (
       <div>
         <MarsGround width={X} height={Y} x={x} y={y} direction={direction} />
-        <div role="control-container" className="Control">
+        <div data-testid="control-container" className="Control">
           <TextArea
-            role="command-input"
+            data-testid="command-input"
             defaultValue={command}
             className="ControlInput"
             raws={4}
@@ -34,10 +34,9 @@ export default class Marsrover extends Component {
               this.setState({ input: e.currentTarget.value })
             }}
           />
-          <Button role="command-button" className="ControlButton" type="primary" onClick={() => {
+          <Button data-testid="command-button" className="ControlButton" type="primary" onClick={() => {
             if (parser) {
               const result = parser(this.state.input) || {}
-              console.log('has parser', result)
 
               this.setState({
                 X: result.X || X,

@@ -10,13 +10,13 @@ const MarsGround = ({ width = 5, height = 5, x = 0, y = 0, direction = 'N' }) =>
       <div className="Gridmap" style={{ width: width * size, height: height * size }}>
         <div className="MarsGround" style={{ width: width * size, height: height * size }}>
           {_.times(width * height, String).map(h => (
-            <div role="map-item" key={h} className="MarsGroundItem" />
+            <div data-testid="map-item" key={h} className="MarsGroundItem" />
           ))}
         </div>
 
         <div className={['Marsrover', direction].join(' ')} style={{ left: x * size + 2, top: y * size - 2 }}>
-          <div role="marsrover" className="Rover">️⬆</div>
-          <div role="marsrover-info" className="RoverInfo">{`${x} ${y} ${direction}`}</div>
+          <div data-testid="marsrover" className="Rover">️⬆</div>
+          <div data-testid="marsrover-info" className="RoverInfo">{`${x} ${y} ${direction}`}</div>
         </div>
 
         <div className="mark N">N</div>

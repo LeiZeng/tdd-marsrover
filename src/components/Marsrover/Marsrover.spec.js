@@ -14,7 +14,7 @@ it('should render mars ground', async () => {
   const wrapper = render(<Marsrover />)
 
   // when
-  const result = await screen.findByRole('marsrover-info')
+  const result = await screen.findByTestId('marsrover-info')
 
   // then
   expect(result).toBeTruthy()
@@ -25,7 +25,7 @@ it('should render control', async () => {
   const wrapper = render(<Marsrover />)
 
   // when
-  const mapItem = await screen.findByRole('control-container')
+  const mapItem = await screen.findByTestId('control-container')
 
   // then
   expect(mapItem).toBeTruthy()
@@ -40,13 +40,13 @@ LMLMLMLMM`
   const wrapper = render(<Marsrover />)
 
   // when
-  const commandInput = await screen.findByRole('command-input')
+  const commandInput = await screen.findByTestId('command-input')
 
   fireEvent.change(commandInput, {
     target: {value: testInputValue},
   })
 
-  const result = await screen.findByRole('marsrover-info')
+  const result = await screen.findByTestId('marsrover-info')
   
   // then
   expect(result.textContent).toBe("0 0 N")
@@ -70,15 +70,15 @@ LMLMLMLMM`
   const wrapper = render(<Marsrover parser={parser} />)
 
   // when
-  const commandInput = await screen.findByRole('command-input')
-  const commandButton = await screen.findByRole('command-button')
+  const commandInput = await screen.findByTestId('command-input')
+  const commandButton = await screen.findByTestId('command-button')
 
   fireEvent.change(commandInput, {
     target: {value: testInputValue},
   })
   fireEvent.click(commandButton)
   
-  const result = await screen.findByRole('marsrover-info')
+  const result = await screen.findByTestId('marsrover-info')
   
   // then
   expect(result.textContent).toBe("1 2 S")
