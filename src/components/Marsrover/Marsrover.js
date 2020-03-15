@@ -21,7 +21,6 @@ export default class Marsrover extends Component {
   render() {
     const { X, Y, x, y, direction } = this.state
     const { command = defaultValue, parser } = this.props
-console.log(this.state, command)
     return (
       <div>
         <MarsGround width={X} height={Y} x={x} y={y} direction={direction} />
