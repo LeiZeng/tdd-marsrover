@@ -1,12 +1,13 @@
 import React from 'react'
 import MarsRover from './components/Marsrover'
-import marsRover from './dojo/marsRover'
+import MarsRoverClass from './dojo/marsRover'
 
 const command = `5 5
 1 2 N
 LMLMLMLMM`
 
 const parser = input => {
+  const marsRover = new MarsRoverClass()
   marsRover.execute(input)
   return marsRover
 }
